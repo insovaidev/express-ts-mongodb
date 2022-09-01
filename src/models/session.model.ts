@@ -2,7 +2,7 @@ import { UserDocument } from './user.model';
 import mongoose from "mongoose";
 
 export interface SessionDocument extends mongoose.Document {
-    email: UserDocument['_id'];
+    user: UserDocument["_id"];
     valid: boolean;
     userAgent: string;
     createAt: Date;
@@ -20,6 +20,6 @@ export interface SessionDocument extends mongoose.Document {
     }
   );
     
-  const SessionModel = mongoose.model("Session", sessionSchema);
+  const SessionModel = mongoose.model<SessionDocument>("Session", sessionSchema);
   export default SessionModel;
   
