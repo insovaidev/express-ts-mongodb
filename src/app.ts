@@ -6,6 +6,10 @@ import routes from "./routes";
 import deserializeUser from "./middleware/deserializeUser";
 
 
+// import { nanoid } from 'nanoid';
+
+// const id = nanoid(5);
+
 
 
 const app = express();
@@ -15,7 +19,7 @@ app.use(express.json());
 app.use(deserializeUser)
 
 app.post("/api/data", (req: Request, res: Response) => {
-  console.log(req.body);
+  console.log(id);
   res.sendStatus(200);
 });
 

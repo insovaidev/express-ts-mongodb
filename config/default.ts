@@ -2,7 +2,7 @@ export default {
     port: 1337,
     dbUri: "mongodb+srv://insovai:OzLssUji8ZHJjfSN@cluster0.qgfvlmw.mongodb.net/express-ts",
     saltWorkFactor: 10,
-    accessTokenTtl: '15m',
+    accessTokenTtl: '1m',
     refreshTokenTtl: '1y',
     privateKey: `-----BEGIN PRIVATE KEY-----
 MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC7VJTUt9Us8cKj
