@@ -21,8 +21,8 @@ export async function getProductHandler(req: Request, res: Response) {
   const userId = res.locals.user._id;
   const productId = req.params.productId;
   console.log(productId)
-  // const product = await findProduct({ _id: productId }) 
-  // return res.send(product)
+  const product = await findProduct({ _id: productId }) 
+  return res.send(product)
 }
 
 export async function updateProductHandler(req: Request, res: Response) {
