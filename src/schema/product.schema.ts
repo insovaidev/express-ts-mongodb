@@ -2,6 +2,9 @@ import { number, object, string, TypeOf } from 'zod'
 
 const payload = {
     body: object({
+      productId: string({
+        required_error: "ProductId is required",
+      }),
       title: string({
         required_error: "Title is required",
       }),
@@ -31,7 +34,7 @@ const payload = {
 
   export const updateProductSchema  = object({
     ...payload,
-    ...payload
+    ...params
   })
 
   export const deleteProductSchema = object({

@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
 import { UserDocument } from "./user.model";
 
+import { customAlphabet } from 'nanoid'
+const nanoid = customAlphabet('1234567890abcdef', 10)
 
+function fun(){
+  return `"${nanoid(10)}"`
+}
 
 export interface ProductDocument extends mongoose.Document {
+  productId: string;
   user: UserDocument["_id"];
   title: string;
   description: string;
@@ -12,14 +18,15 @@ export interface ProductDocument extends mongoose.Document {
   createdAt: Date;
   updatedAt: Date;
 }
+
 const productSchema = new mongoose.Schema(
   {
     productId: {
       type: String,
       required: true,
       unique: true,
-      // default: () => `product_${id}`,
-      default:  1
+      default: fun()
+      
     },
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     title: { type: String, required: true },
