@@ -24,7 +24,7 @@ export async function updateSession(
 }
 
 export async function reIssueAccessToken({
-  refreshToken,
+  refreshToken
 }: {
   refreshToken: string;
 }) {

@@ -15,7 +15,6 @@ app.use(deserializeUser);
 app.post("/api/data", (req: Request, res: Response) => {
 
 });
-
 app.get("/", (req: Request, res: Response) => {
   return res.send("Hello world...");
 });

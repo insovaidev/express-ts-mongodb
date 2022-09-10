@@ -1,6 +1,7 @@
 import { DocumentDefinition, FilterQuery } from "mongoose";
 import UserModel, { UserDocument } from "../models/user.model";
 import { omit } from "lodash";
+
 export async function createUser(
   input: DocumentDefinition<
     Omit<UserDocument, "createAt" | "upateAt" | "comparePassword">

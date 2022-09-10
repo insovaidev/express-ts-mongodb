@@ -1,5 +1,6 @@
 import { ProductDocument } from "./../models/product.model";
 import ProductModel from "./../models/product.model";
+
 import {
   DocumentDefinition,
   FilterQuery,
@@ -14,11 +15,11 @@ export async function createProduct(
 }
 
 export async function findProduct(
-  query: FilterQuery<ProductDocument>,
-  options: QueryOptions = { lean: true }
+  query: FilterQuery<ProductDocument>
 ) {
-    return ProductModel.findOne({ query, options });
+    return ProductModel.findOne(query).lean();
 }
+
 
 export async function findAndUpdateProduct(
   query: FilterQuery<ProductDocument>,
@@ -27,6 +28,7 @@ export async function findAndUpdateProduct(
 ) {
   return ProductModel.findOneAndUpdate(query, update, options);
 }
+
 export async function deleteProduct(query: FilterQuery<ProductDocument>) {
   return ProductModel.deleteOne(query);
 }

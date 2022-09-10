@@ -16,11 +16,14 @@ const deserializeUser = async (
   if (!accessToken) {
     return next();
   }
+
   const { decoded, expired } = verifyJwt(accessToken);
+
   if (decoded) {
-    console.log(decoded);
     res.locals.user = decoded;
     return next();
+  }
+  if (expired) {
   }
   if (expired && refreshToken) {
     const newAccessToken = await reIssueAccessToken({ refreshToken });

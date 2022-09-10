@@ -33,8 +33,8 @@ const payload = {
   })
 
   export const updateProductSchema  = object({
-    ...payload,
-    ...params
+    ...params,
+    ...payload
   })
 
   export const deleteProductSchema = object({
@@ -45,7 +45,6 @@ const payload = {
     ...params,
   });
   
-
 export type CreateProductInput = TypeOf<typeof createProductSchema>;
 export type UpdateProductInput = TypeOf<typeof updateProductSchema>;
 export type ReadProductInput = TypeOf<typeof getProductSchema>;
